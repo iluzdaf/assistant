@@ -4,7 +4,8 @@
 
 ## Due Rule
 
-- Run if any unread or untriaged email in inbox or spam since last execution.
+- Run daily at 9:00 and 21:00.
+- At each scheduled run, process any unread or untriaged email in inbox or spam since the previous run.
 
 ## Inputs
 
