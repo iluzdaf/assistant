@@ -1,0 +1,4 @@
+# Local-only state
+.DS_Store
+.env
+.env.*
