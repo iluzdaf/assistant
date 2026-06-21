@@ -19,8 +19,8 @@
 
 ## Recommended next step
 
-- Draft reply or action, if one is obvious.
-- Otherwise, what to check next.
+- [ ] Draft reply or action, if one is obvious.
+- [ ] Otherwise, what to check next.
 
 ## Notes
 
