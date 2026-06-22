@@ -10,12 +10,16 @@
 ## Inputs
 
 - Unread or untriaged email in inbox or spam.
+- Open Bear notes tagged `#needs-review` that were created by earlier triage passes.
 - Shared note format, writing guide, and Bear CLI instructions live in `docs/`.
 
 ## Actions
 
 - Read email.
 - If an email is in spam but is clearly not spam and does not need review, mark it as not spam.
+- Re-scan open needs-review Bear notes from earlier passes before deciding the current run is complete.
+- If every checkbox in `Recommended next step` is ticked on an open needs-review note, archive the Bear note and archive the corresponding email even if the email was already removed from the unread queue.
+- If a matching needs-review Bear note is archived, archive the corresponding email too.
 - Identify emails that need your review.
 - For each email that needs review, create or update the matching Bear note.
 - Link each review task back to the Bear note using the subject-based reference shape.
@@ -26,8 +30,6 @@
 - If a review email does not need a reply draft, use the review-action checkbox for the next non-draft action and omit the fenced reply block and send checkbox.
 - If a review email already has a draft reply, revise the draft to satisfy any requested changes before sending.
 - Do not treat `Send reply` as send-ready while requested changes are still unmet.
-- If every checkbox in `Recommended next step` is ticked, archive the Bear note and archive the corresponding email.
-- If the matching needs-review Bear note is archived, archive the corresponding email too.
 - Collect all emails that do not need review into one summary note for the run.
 - Archive each non-review email after it has been summarized.
 
@@ -41,10 +43,11 @@
 - The `Send reply` checkbox is the approval signal to send the current reply on the next heartbeat pass only after the requested changes are reflected.
 - Existing draft replies are revised when requested changes are present.
 - Notes with unmet requested changes remain unarchived until the draft matches the requested changes.
-- The heartbeat checks the note's checkbox state, not just whether the note is open.
+- The heartbeat checks the note's checkbox state, not just whether the note is open or still unread in the inbox.
 - Review-only emails without a draft close out after their non-draft action is complete.
 - When every checkbox in `Recommended next step` is ticked, the Bear note and the corresponding email are archived.
 - If a needs-review Bear note is archived, the corresponding email is archived too.
+- Open needs-review notes from earlier passes are re-scanned on each heartbeat so completed items do not get stranded after the inbox email is no longer unread.
 - All emails that do not need review are captured in a single summary note.
 - All non-review emails are archived after being summarized.
 - The automation memory records that this job already ran for the current unread or untriaged email set.
