@@ -6,6 +6,7 @@
 
 - Run on every heartbeat pass.
 - On each heartbeat, process any unread or untriaged email in inbox or spam since the previous heartbeat.
+- On each heartbeat, also re-scan open `#needs-review` Bear notes from earlier passes so completed reviews can be archived even when no new email is due.
 
 ## Inputs
 
