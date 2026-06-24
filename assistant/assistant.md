@@ -4,6 +4,12 @@
 - Inspect for due jobs and run them.
 - Update automation memory only after completion checks pass.
 
+## Instruction Policy
+
+- Read `jobs/README.md` and `docs/README.md` as routing docs before selecting task-specific files.
+- For task-specific work, read only the relevant job files, templates, and tool docs before editing or running that task.
+- Do not recursively read all job and docs files unless the task requires a repo-wide instruction audit.
+
 ## Where To Look
 
 - `jobs/README.md`: how runnable job files are structured.

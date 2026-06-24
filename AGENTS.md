@@ -1,6 +1,6 @@
 # AGENTS
 
-- Before doing repository work, read every Markdown file directly under `./`.
-- Treat `./README.md` as the table of contents and starting point.
-- Follow the instructions referenced by `./README.md`, including linked job and docs guidance.
+- Before repository work, read `./assistant/assistant.md`.
+- Treat `./assistant/assistant.md` as the instruction index and starting point.
+- Follow the repository instruction policy in `./assistant/assistant.md`.
 - Do not rely on this file for project details; it is only an entrypoint.
