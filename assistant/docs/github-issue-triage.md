@@ -6,7 +6,7 @@
 
 - Use GitHub access with the narrowest permissions that can read issues, read issue comments, read repository contents for the workflow doc, update issues, create issue comments when required, and add or remove labels.
 - Process only repositories listed in the product issue triage job's `Configuration` section.
-- Process only open issues selected by each product repository's workflow doc.
+- Process all open issues in each configured repository, then select issues using the product repository workflow doc and the human-gate label list.
 
 ## GitHub Skill First
 
@@ -20,7 +20,7 @@
 - Replace label placeholders with labels named by the product repository workflow doc.
 
 ```sh
-gh issue list --repo owner/repo --state open --label needs-triage --json number,title,body,labels,url,updatedAt
+gh issue list --repo owner/repo --state open --json number,title,body,labels,url,updatedAt
 gh issue view 123 --repo owner/repo --comments --json number,title,body,comments,labels,url,updatedAt
 gh api repos/owner/repo/contents/docs/agent-workflow.md --jq .content
 gh issue edit 123 --repo owner/repo --body-file /path/to/body.md
