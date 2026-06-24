@@ -14,6 +14,13 @@
 - Previous review note: [[Assistant Daily Review - YYYY-MM-DD]] or none found
 - Run-log evidence: Checked YYYY-MM-DD run-log files or state missing log evidence
 
+## Due Job Checklist
+
+- Job index evidence: Checked `assistant/jobs/README.md` and runnable job files, or state missing evidence
+- [x] Job name: Due rule evidence found and evaluated; due now: yes or no; run-log evidence or none expected
+- [ ] Job name: Due rule evidence missing or incomplete; due now: unknown; evidence gap
+- Result: No jobs due, due jobs listed above, or unable to determine due jobs
+
 ## Jobs Reviewed
 
 - Job name: What ran, what changed, and completion status
