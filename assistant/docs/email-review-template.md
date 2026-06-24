@@ -39,6 +39,9 @@ Draft the reply here.
 - Treat unchecked `reply:` changes as incomplete until the fenced draft reflects them.
 - Do not treat `reply:` checkboxes as approval to send.
 - Do not send the reply until `Send reply` is checked.
+- In Bear, an unchecked box is `- [ ]` and a checked box is `- [x]`.
+- In this workflow, a checked box means the requested action is already complete.
+- If a note still has any unchecked boxes, the note is still open.
 
 ## Notes
 

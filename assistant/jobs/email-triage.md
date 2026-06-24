@@ -39,6 +39,7 @@
 ## Completion Check
 
 - Open needs-review notes from earlier passes are re-scanned before new email is triaged.
+- Treat `- [ ]` as an open task and `- [x]` as a completed task in Bear.
 - A checked `reply:` line means that draft edit has already been applied and should be ignored on later runs.
 - `reply:` checkboxes do not authorize sending.
 - Only the dedicated checked `Send reply` checkbox authorizes sending the fenced draft in Gmail.
