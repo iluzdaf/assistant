@@ -28,6 +28,7 @@
   - date
   - short reason it was selected
 - Keep `#topic` reserved for the topic notes only so the job can find them reliably.
+- After the completion check passes, add a run-log entry using `docs/job-run-log.md`.
 
 ## Completion Check
 
@@ -38,7 +39,9 @@
 - Curated items were appended to the existing rolling topic note rather than creating a separate output structure.
 - Each appended item uses a checkbox line with title, source link, source type, date, and a short selection reason.
 - `#topic` remains reserved for topic notes and is not used on the weekly output entries.
+- A run-log entry records this job's status, outputs, and any evidence gaps after the checks above pass.
 
 ## Outputs
 
 - Updated Bear topic notes with weekly article curation entries.
+- One run-log entry for the topic curation attempt.

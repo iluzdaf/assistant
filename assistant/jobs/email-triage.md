@@ -34,6 +34,7 @@
 - Use the email writing guide when drafting or revising reply text.
 - If the email needs a reply draft, put the draft, any `reply:` change requests, and the `Send reply` checkbox inside the note's `Recommended next step` section.
 - If a review email does not need a reply draft, use a checkbox for the next non-draft action and omit the fenced reply block and `Send reply` checkbox.
+- After the completion check passes, add a run-log entry using `docs/job-run-log.md`.
 
 ## Completion Check
 
@@ -55,9 +56,11 @@
 - All summarized emails are non-spam inbox messages with no obvious action.
 - All summarized emails are archived after being summarized.
 - The automation memory records that this job already ran for the current unread or untriaged email set.
+- A run-log entry records this job's status, outputs, and any evidence gaps after the checks above pass.
 
 ## Outputs
 
 - Tasks for emails that need review.
 - Bear notes tagged `#email #needs-review` for review follow-ups.
 - One Bear note summarizing non-spam inbox emails that did not need review.
+- One run-log entry for the email triage attempt.

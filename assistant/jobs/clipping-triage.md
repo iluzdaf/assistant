@@ -25,6 +25,7 @@
 - When a topic match is strong enough, append the follow-up link to that topic note using the same checkbox + metadata format used by `topic curation`.
 - If a clipping has multiple plausible topic matches, prefer the strongest keyword match and leave the rest for manual review.
 - Skip any note that already has `#clipping` on later runs.
+- After the completion check passes, add a run-log entry using `docs/job-run-log.md`.
 
 ## Completion Check
 
@@ -34,8 +35,10 @@
 - Follow-up links were matched to the appropriate topic note using keyword matching.
 - Topic-note additions used the same checkbox + metadata format as `topic curation`.
 - Notes already tagged `#clipping` were skipped on subsequent runs.
+- A run-log entry records this job's status, outputs, and any evidence gaps after the checks above pass.
 
 ## Outputs
 
 - Clipping notes tagged `#clipping`.
 - Topic notes updated with follow-up links extracted from clipping notes.
+- One run-log entry for the clipping triage attempt.

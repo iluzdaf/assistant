@@ -11,6 +11,7 @@
 - `docs/README.md`: shared reference docs for Bear details.
 - `docs/bear-cli.md`: Bear note commands and conventions.
 - `docs/daily-review-template.md`: template for daily assistant review notes.
+- `docs/job-run-log.md`: local daily run-log convention for job activity evidence.
 - `docs/email-writing-guide.md`: reply style guide for email drafts.
 - `docs/email-review-template.md`: template for review emails.
 - `docs/email-summary-template.md`: template for triaged emails that do not need review.

@@ -12,6 +12,7 @@
 
 - Reviewed period: YYYY-MM-DD HH:MM to YYYY-MM-DD HH:MM local time
 - Previous review note: [[Assistant Daily Review - YYYY-MM-DD]] or none found
+- Run-log evidence: Checked YYYY-MM-DD run-log files or state missing log evidence
 
 ## Jobs Reviewed
 
