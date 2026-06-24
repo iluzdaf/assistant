@@ -2,7 +2,7 @@
 
 - Keep the note short and scannable.
 
-```md
+````md
 # Short email subject
 
 - From: sender name
@@ -20,9 +20,8 @@
 ## Recommended next step
 
 - [ ] Review action
-  - Requested change 1
-  - Requested change 2
-  - Requested changes are the active revision list for the draft.
+
+- [ ] reply: Requested draft change.
 
 - [ ] Send reply
 
@@ -30,12 +29,15 @@
 Draft the reply here.
 ```
 
-- Use `Review action` when the email still needs changes or a non-send follow-up.
-- Use `Send reply` only when the fenced draft is ready to go out.
-- Put requested changes on the indented lines directly above the draft when a draft is needed.
+- Use `Review action` for non-reply follow-up.
+- Use `reply:` checkbox lines for requested draft edits, such as `- [ ] reply: Suggest a free timeslot on Sunday instead.`
+- Tick a `reply:` checkbox only after that edit is reflected in the fenced draft.
+- A checked `reply:` checkbox is already handled and can be ignored on later runs.
+- Use `Send reply` only when the fenced draft should be sent.
 - Use the fenced block only when the email needs a reply draft.
 - Edit the fenced block directly when revising the reply.
-- Treat the requested changes as incomplete until the fenced draft reflects them.
+- Treat unchecked `reply:` changes as incomplete until the fenced draft reflects them.
+- Do not treat `reply:` checkboxes as approval to send.
 - Do not send the reply until `Send reply` is checked.
 
 ## Notes
@@ -43,4 +45,4 @@ Draft the reply here.
 - Any extra context or deadline.
 
 #email #needs-review
-```
+````

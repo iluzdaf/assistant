@@ -1,60 +1,63 @@
 # Email Triage
 
-- Purpose: triage unread email in inbox or spam, create Bear notes for anything that needs review, and create one summary note for everything else before archiving it.
+- Purpose: process existing email review notes, clear spam separately, triage new inbox email, create Bear notes for anything that needs review, and summarize only non-spam inbox email that does not need review.
 
 ## Due Rule
 
 - Run on every heartbeat pass.
-- On each heartbeat, process any unread or untriaged email in inbox or spam since the previous heartbeat.
-- On each heartbeat, also re-scan open `#needs-review` Bear notes from earlier passes so completed reviews can be archived even when no new email is due.
+- On each heartbeat, process existing email review notes, spam-folder email, and new inbox email without the `Codex/Triaged` label.
+- On each heartbeat, also re-scan open Bear notes tagged `#email #needs-review` from earlier passes so completed reviews can be archived even when no new email is due.
 
 ## Inputs
 
-- Unread or untriaged email in inbox or spam.
-- Open Bear notes tagged `#needs-review` that were created by earlier triage passes.
+- Inbox email without the `Codex/Triaged` label.
+- Spam-folder email, checked separately from inbox triage.
+- Open Bear notes tagged `#email #needs-review` that were created by earlier triage passes.
 - Shared note format, writing guide, and Bear CLI instructions live in `docs/`.
 
 ## Actions
 
-- Read email.
-- If an email is in spam but is clearly not spam and does not need review, mark it as not spam.
-- Re-scan open needs-review Bear notes from earlier passes before deciding the current run is complete.
-- If every checkbox in `Recommended next step` is ticked on an open needs-review note, archive the Bear note and archive the corresponding email even if the email was already removed from the unread queue.
+- Re-scan open email Bear notes for unchecked `reply:` change requests.
+- Apply each unchecked `reply:` request to the fenced draft reply, then tick that `reply:` checkbox.
+- Re-scan Bear notes for checked `Send reply` checkboxes; send the current fenced draft in Gmail only for notes where `Send reply` is checked.
+- Re-scan Bear notes for completed actions; when every checkbox in `Recommended next step` is ticked, archive the Bear note and archive the corresponding Gmail message.
 - If a matching needs-review Bear note is archived, archive the corresponding email too.
-- Identify emails that need your review.
-- For each email that needs review, create or update the matching Bear note.
+- Check spam separately from inbox triage.
+- If any spam message requires action, move it to the inbox so it can enter the normal needs-review flow.
+- Clear the remaining spam folder without summarizing those messages.
+- Check inbox for new email that does not have the `Codex/Triaged` label.
+- Collect non-spam inbox emails that do not have an obvious action into one summary note for the run.
+- Archive each summarized email after it has been summarized.
+- For each email that has an obvious action, create or update the matching Bear note tagged `#email #needs-review`.
+- Keep each needs-review email in the inbox and label it with `Codex/Triaged`.
 - Link each review task back to the Bear note using the subject-based reference shape.
 - Use the email writing guide when drafting or revising reply text.
-- Inspect the note's `Recommended next step` checkbox state before deciding whether the email is complete.
-- If the email needs a reply draft, put the draft and any requested changes inside the note's `Recommended next step` section.
-- Write the `Recommended next step` section as a review-action checkbox, optional requested-change lines, a send checkbox, and a fenced draft block when a reply draft is needed.
-- If a review email does not need a reply draft, use the review-action checkbox for the next non-draft action and omit the fenced reply block and send checkbox.
-- If a review email already has a draft reply, revise the draft to satisfy any requested changes before sending.
-- Do not treat `Send reply` as send-ready while requested changes are still unmet.
-- Collect all emails that do not need review into one summary note for the run.
-- Archive each non-review email after it has been summarized.
+- If the email needs a reply draft, put the draft, any `reply:` change requests, and the `Send reply` checkbox inside the note's `Recommended next step` section.
+- If a review email does not need a reply draft, use a checkbox for the next non-draft action and omit the fenced reply block and `Send reply` checkbox.
 
 ## Completion Check
 
-- Spam-folder messages that are clearly not spam are marked as not spam.
+- Open needs-review notes from earlier passes are re-scanned before new email is triaged.
+- A checked `reply:` line means that draft edit has already been applied and should be ignored on later runs.
+- `reply:` checkboxes do not authorize sending.
+- Only the dedicated checked `Send reply` checkbox authorizes sending the fenced draft in Gmail.
+- Completed needs-review emails are archived, not summarized.
+- When every checkbox in `Recommended next step` is ticked, the Bear note and the corresponding email are archived.
+- If a needs-review Bear note is archived, the corresponding email is archived too.
+- Spam messages are handled separately from summary creation.
+- Spam messages are never added to the summary note unless first moved to the inbox because they require action.
+- The remaining spam folder is cleared after important or actionable messages are moved to the inbox.
 - Each email that needs review has a corresponding task.
 - Each created task points back to the Bear note for that email.
 - Draft replies follow the email writing guide.
-- Review notes keep the review-action checkbox, requested changes, send checkbox, and draft reply inside the `Recommended next step` section when a draft is needed.
-- The `Send reply` checkbox is the approval signal to send the current reply on the next heartbeat pass only after the requested changes are reflected.
-- Existing draft replies are revised when requested changes are present.
-- Notes with unmet requested changes remain unarchived until the draft matches the requested changes.
-- The heartbeat checks the note's checkbox state, not just whether the note is open or still unread in the inbox.
+- Review notes are tagged `#email #needs-review` and keep the `reply:` change requests, `Send reply` checkbox, and draft reply inside the `Recommended next step` section when a draft is needed.
 - Review-only emails without a draft close out after their non-draft action is complete.
-- When every checkbox in `Recommended next step` is ticked, the Bear note and the corresponding email are archived.
-- If a needs-review Bear note is archived, the corresponding email is archived too.
-- Open needs-review notes from earlier passes are re-scanned on each heartbeat so completed items do not get stranded after the inbox email is no longer unread.
-- All emails that do not need review are captured in a single summary note.
-- All non-review emails are archived after being summarized.
+- All summarized emails are non-spam inbox messages with no obvious action.
+- All summarized emails are archived after being summarized.
 - The automation memory records that this job already ran for the current unread or untriaged email set.
 
 ## Outputs
 
 - Tasks for emails that need review.
-- Bear notes for review follow-ups.
-- One Bear note summarizing all emails that did not need review.
+- Bear notes tagged `#email #needs-review` for review follow-ups.
+- One Bear note summarizing non-spam inbox emails that did not need review.
