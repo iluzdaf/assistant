@@ -35,6 +35,7 @@
 ## Current Files
 
 - `bear-cli.md`: Bear note commands, constraints, and note-title conventions.
+- `daily-review-template.md`: template for daily assistant review notes that need review in Bear.
 - `email-writing-guide.md`: reply style guide for email drafts.
 - `email-review-template.md`: template for emails that need review follow-up.
 - `email-summary-template.md`: template for emails that do not need review.
