@@ -12,6 +12,11 @@
 - Product repositories:
   - `iluzdaf/go-recorder`
 - Workflow doc path: `docs/agent-workflow.md`.
+- Human-gate issue labels:
+  - `needs-triage`
+  - `needs-approval`
+  - `needs-clarification`
+  - `blocked`
 - Bear review card:
   - backend: `bear`
   - title: `Product Issues Needing Review`
@@ -34,6 +39,7 @@
 - For each configured repository, read the configured workflow doc before scanning issues.
 - If the product workflow doc is missing or unreadable, add or update a repository-level checkbox in the Bear review card with the missing-doc evidence and skip that repository.
 - Use the product workflow doc to identify issue intake labels, human gates, agent-actionable states, issue updates, comments, PR handoff rules, verification expectations, and label transitions.
+- If an open issue has any label in `Human-gate issue labels`, add or update it in the Bear review card unless the workflow doc already shows it is fully agent-actionable.
 - Do not invent assistant-owned product lifecycle labels or fallback label transitions.
 - Scan only open issues selected by the product workflow doc.
 - For each matching issue, gather the issue title, issue body, all issue comments, current labels, source URL, and the workflow-doc content through the GitHub skill when available.
@@ -65,6 +71,7 @@
 - Agent-processed issues were updated directly according to the product repository workflow doc.
 - Source issue comments were posted only when required by the product repository workflow or needed to preserve clear issue history.
 - Label updates followed the product repository workflow doc; no assistant-owned lifecycle labels or fallback transitions were used.
+- Open issues carrying any `Human-gate issue labels` were added or updated in the Bear review card unless they were already resolved as agent-actionable.
 - Failed or ambiguous agent-processing attempts left source labels unchanged and added or updated the issue in the Bear review card with failure evidence.
 - A run-log entry records this job's status, processed issues, skipped issues, outputs, and any evidence gaps after the checks above pass.
 
