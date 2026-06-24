@@ -9,7 +9,8 @@
 
 ## Configuration
 
-- Product repositories: none configured yet.
+- Product repositories:
+  - `iluzdaf/go-recorder`
 - Workflow doc path: `docs/agent-workflow.md`.
 - Bear review card:
   - backend: `bear`
