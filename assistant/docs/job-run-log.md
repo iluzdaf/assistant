@@ -5,11 +5,20 @@
 
 ## Location
 
-- Write one Markdown file per local day.
-- Default path: `$CODEX_HOME/automations/assistant/run-log/YYYY-MM-DD.md`.
-- If `$CODEX_HOME` is unset, use `~/.codex/automations/assistant/run-log/YYYY-MM-DD.md`.
-- Create the directory and dated file when missing.
-- Treat the file as append-only during the day.
+- Write one Bear note per local day.
+- Title: `Assistant Job Run Log - YYYY-MM-DD`.
+- Tags: `#assistant #job-run-log`.
+- Create the dated Bear note when missing.
+- Treat the note as append-only during the day.
+- Link to output Bear notes by title when a job creates or updates them.
+
+## How To Write
+
+- Use `docs/bear-cli.md` for Bear commands.
+- Search for the exact dated title before writing.
+- If the note does not exist, create it with the required title and tags.
+- Append new entries to the end of the dated note.
+- Verify the saved entry before treating the run-log write as complete.
 
 ## When To Write
 

@@ -12,7 +12,7 @@
 
 - Reviewed period: YYYY-MM-DD HH:MM to YYYY-MM-DD HH:MM local time
 - Previous review note: [[Assistant Daily Review - YYYY-MM-DD]] or none found
-- Run-log evidence: Checked YYYY-MM-DD run-log files or state missing log evidence
+- Run-log evidence: Checked Bear note [[Assistant Job Run Log - YYYY-MM-DD]] or state missing log evidence
 
 ## Due Job Checklist
 
