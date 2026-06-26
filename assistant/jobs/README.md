@@ -12,6 +12,22 @@
 - Completion check
 - Outputs
 
+## Dispatch
+
+- On heartbeat runs, enumerate every `*.md` file in this directory except this README.
+- Read each job's `Due Rule` before selecting task-specific instructions.
+- Run every due job in the same heartbeat pass.
+- If a job is not due, record the due-rule evidence and skip reason in the run log or the due-job checklist for the job that performs the dispatch.
+- Do not treat a highlighted or recently edited heartbeat job as the only due job.
+
+## Runnable Jobs
+
+- `clipping-triage.md`: run weekly.
+- `daily-review.md`: run once each morning.
+- `email-triage.md`: run on every heartbeat pass.
+- `product-issue-triage.md`: run on every heartbeat pass.
+- `topic-curation.md`: run weekly.
+
 ## Writing Rules
 
 - Keep each job short and direct.
