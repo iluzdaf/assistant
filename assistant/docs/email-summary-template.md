@@ -1,14 +1,20 @@
 # Email Summary Template
 
+- Template for email summary note sections.
 - Include enough context that the email is understandable without reopening it.
+- Use this exact shape for summarized emails; do not replace it with ad hoc bullets.
 
 ```md
-# Email summary YYYY-MM-DD
+# Email Summary
 
-- Date: YYYY-MM-DD
+## YYYY-MM-DD
+
+### HH:MM local - email-triage summary
+
+- Run window: YYYY-MM-DD HH:MM to YYYY-MM-DD HH:MM local time
 - Scope: Emails triaged in this run that did not need review
 
-## Summary
+#### Summary
 
 - Subject: Short subject
   - From: sender name
@@ -22,9 +28,9 @@
   - What it is: ...
   - Key details: ...
 
-## Notes
+#### Notes
 
 - Anything worth remembering later, such as a follow-up date or a useful reference number.
 
-#email #fyi
+#email #summary
 ```

@@ -28,7 +28,7 @@
 - `docs/product-issue-review-card-template.md`: Bear card template for product issues needing human intervention.
 - `docs/email-writing-guide.md`: reply style guide for email drafts.
 - `docs/email-review-template.md`: template for review emails.
-- `docs/email-summary-template.md`: template for triaged emails that do not need review.
+- `docs/email-summary-template.md`: template for email summary note sections.
 
 ## Working Style
 
