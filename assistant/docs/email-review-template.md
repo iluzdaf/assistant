@@ -1,23 +1,30 @@
 # Email Review Template
 
-- Keep the note short and scannable.
+- Template for email review note sections.
+- Keep one section per email that needs review.
+- Keep date sections in newest-first order, with the latest date at the top.
+- Keep only open review items in this note; remove a section after its checkbox actions are complete and the corresponding email is archived.
 
 ````md
-# Short email subject
+# Emails Needing Review
+
+## YYYY-MM-DD
+
+### Short email subject
 
 - From: sender name
 - Date: YYYY-MM-DD
-- Email: [[Short email subject]]
+- Email: Gmail message id, subject, or other source reference
 
-## Summary
+#### Summary
 
 - One or two lines on what the email says.
 
-## Why it needs review
+#### Why it needs review
 
 - Why this needs your attention.
 
-## Recommended next step
+#### Recommended next step
 
 - [ ] Review action
 
@@ -43,7 +50,7 @@ Draft the reply here.
 - In this workflow, a checked box means the requested action is already complete.
 - If a note still has any unchecked boxes, the note is still open.
 
-## Notes
+#### Notes
 
 - Any extra context or deadline.
 

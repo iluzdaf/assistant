@@ -40,5 +40,5 @@
 - `github-issue-triage.md`: GitHub issue read/write conventions for product issue triage.
 - `product-issue-review-card-template.md`: Bear card template for product issues needing human intervention.
 - `email-writing-guide.md`: reply style guide for email drafts.
-- `email-review-template.md`: template for emails that need review follow-up.
+- `email-review-template.md`: template for email review note sections.
 - `email-summary-template.md`: template for email summary note sections.
