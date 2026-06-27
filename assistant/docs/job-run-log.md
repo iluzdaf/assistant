@@ -5,19 +5,21 @@
 
 ## Location
 
-- Write one Bear note per local day.
-- Title: `Assistant Job Run Log - YYYY-MM-DD`.
+- Write all job activity to one canonical Bear note.
+- Title: `Assistant Job Run Log`.
 - Tags: `#assistant #job-run-log`.
-- Create the dated Bear note when missing.
-- Treat the note as append-only during the day.
+- Create the canonical Bear note when missing.
+- Treat the note as append-only.
+- Group entries under a local-date heading: `## YYYY-MM-DD`.
 - Link to output Bear notes by title when a job creates or updates them.
 
 ## How To Write
 
 - Use `docs/bear-cli.md` for Bear commands.
-- Search for the exact dated title before writing.
+- Search for the exact canonical title before writing.
 - If the note does not exist, create it with the required title and tags.
-- Append new entries to the end of the dated note.
+- Append new entries to the end of the relevant local-date section.
+- If the local-date section does not exist, append it at the end of the note before adding entries for that date.
 - Verify the saved entry before treating the run-log write as complete.
 
 ## When To Write
@@ -31,7 +33,9 @@
 ## Entry Template
 
 ```md
-## HH:MM local - job-name - status
+## YYYY-MM-DD
+
+### HH:MM local - job-name - status
 
 - Run window: YYYY-MM-DD HH:MM to YYYY-MM-DD HH:MM local time
 - Trigger: heartbeat, daily review, manual request, or other

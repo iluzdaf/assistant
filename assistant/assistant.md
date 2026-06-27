@@ -23,7 +23,7 @@
 - `docs/README.md`: shared reference docs for Bear details.
 - `docs/bear-cli.md`: Bear note commands and conventions.
 - `docs/daily-review-template.md`: template for daily assistant review notes.
-- `docs/job-run-log.md`: Bear daily run-log convention for job activity evidence.
+- `docs/job-run-log.md`: Bear run-log convention for job activity evidence.
 - `docs/github-issue-triage.md`: GitHub issue read/write conventions for product issue triage.
 - `docs/product-issue-review-card-template.md`: Bear card template for product issues needing human intervention.
 - `docs/email-writing-guide.md`: reply style guide for email drafts.
