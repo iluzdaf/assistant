@@ -3,7 +3,7 @@
 - Template for email review note sections.
 - Keep one section per email that needs review.
 - Keep date sections in newest-first order, with the latest date at the top.
-- Keep only open review items in this note; remove a section after its checkbox actions are complete and the corresponding email is archived.
+- Keep only open review items in this note; remove each section independently after that section's checkbox actions are complete and the corresponding email is archived.
 
 ````md
 # Emails Needing Review
@@ -48,7 +48,8 @@ Draft the reply here.
 - Do not send the reply until `Send reply` is checked.
 - In Bear, an unchecked box is `- [ ]` and a checked box is `- [x]`.
 - In this workflow, a checked box means the requested action is already complete.
-- If a note still has any unchecked boxes, the note is still open.
+- If a section still has any unchecked boxes, that section stays open.
+- Other completed sections in the same note should still be removed once their own checkbox actions are complete and archived.
 
 #### Notes
 

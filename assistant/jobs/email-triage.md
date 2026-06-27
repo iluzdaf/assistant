@@ -20,7 +20,9 @@
 - Re-scan open email sections in `Emails Needing Review` for unchecked `reply:` change requests.
 - Apply each unchecked `reply:` request to the fenced draft reply, then tick that `reply:` checkbox.
 - Re-scan email sections for checked `Send reply` checkboxes; send the current fenced draft in Gmail only for sections where `Send reply` is checked.
-- Re-scan email sections for completed actions; when every checkbox in a section's `Recommended next step` is ticked, archive the corresponding Gmail message and remove that section from `Emails Needing Review`.
+- Re-scan email sections for completed actions one section at a time.
+- When every checkbox in one section's `Recommended next step` is ticked, archive that section's corresponding Gmail message and remove only that section from `Emails Needing Review`.
+- Do not wait for other sections in the note to finish before removing a completed section.
 - Check spam separately from inbox triage.
 - If any spam message requires action, move it to the inbox so it can enter the normal needs-review flow.
 - Clear the remaining spam folder without summarizing those messages.
@@ -50,7 +52,7 @@
 - `reply:` checkboxes do not authorize sending.
 - Only the dedicated checked `Send reply` checkbox authorizes sending the fenced draft in Gmail.
 - Completed needs-review emails are archived, not summarized.
-- When every checkbox in a section's `Recommended next step` is ticked, the corresponding email is archived and the section is removed from `Emails Needing Review`.
+- When every checkbox in one section's `Recommended next step` is ticked, that section's corresponding email is archived and only that section is removed from `Emails Needing Review`, even if other sections remain open.
 - Spam messages are handled separately from summary creation.
 - Spam messages are never added to the summary note unless first moved to the inbox because they require action.
 - The remaining spam folder is cleared after important or actionable messages are moved to the inbox.
