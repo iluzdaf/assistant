@@ -7,7 +7,7 @@
 
 - Write all job activity to one canonical Bear note.
 - Title: `Assistant Job Run Log`.
-- Tags: `#assistant #job-run-log`.
+- Tags: `#assistant/job-run-log`.
 - Create the canonical Bear note when missing.
 - Treat the note as append-only.
 - Group entries under one local-date heading per day: `## YYYY-MM-DD`.
@@ -24,7 +24,7 @@
 - Do not create a second section for a date that already exists.
 - Write GitHub issue references as `issue 123`, `owner/repo issue 123`, or the full issue URL.
 - Do not write bare `#123` or `owner/repo#123` issue references in Bear note body text; Bear treats hash tokens as tags and adds noise to the tag list.
-- Keep hash tags only for intentional Bear tags, such as the canonical footer tags.
+- Keep hash tags only for intentional Bear tags, such as the canonical footer tag.
 - Verify the saved entry before treating the run-log write as complete.
 
 ## When To Write

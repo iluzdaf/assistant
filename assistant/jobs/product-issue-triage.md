@@ -20,7 +20,7 @@
 - Bear review card:
   - backend: `bear`
   - title: `Product Issues Needing Review`
-  - tags: `assistant/issue-triage`, `needs-review`
+  - tags: `assistant/issue-triage`
 
 ## Inputs
 

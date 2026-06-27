@@ -33,5 +33,5 @@
 
 - Anything worth remembering later, such as a follow-up date or a useful reference number.
 
-#email #summary
+#assistant/email/summary
 ```

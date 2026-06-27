@@ -12,7 +12,7 @@
 
 - Inbox email without the `Codex/Triaged` label.
 - Spam-folder email, checked separately from inbox triage.
-- The canonical Bear note `Emails Needing Review` tagged `#email #needs-review`.
+- The canonical Bear note `Emails Needing Review` tagged `#assistant/email/needs-review`.
 - Shared note format, writing guide, and Bear CLI instructions live in `docs/`.
 
 ## Actions
@@ -26,13 +26,13 @@
 - Clear the remaining spam folder without summarizing those messages.
 - Check inbox for new email that does not have the `Codex/Triaged` label.
 - Collect non-spam inbox emails that do not have an obvious action into the canonical summary note using `docs/email-summary-template.md`.
-- Create or update one Bear note titled `Email Summary` tagged `#email #summary`.
+- Create or update one Bear note titled `Email Summary` tagged `#assistant/email/summary`.
 - Add each run's summarized emails under the current local-date section `## YYYY-MM-DD`, using one run subsection per heartbeat.
 - Keep date sections newest-first, inserting a new summary date above older date sections.
 - Do not create a second section for a summary date that already exists.
 - Archive each summarized email after it has been summarized.
 - For each email that has an obvious action, create or update the matching section in `Emails Needing Review` using `docs/email-review-template.md`.
-- Create the canonical review note if missing, titled `Emails Needing Review` and tagged `#email #needs-review`.
+- Create the canonical review note if missing, titled `Emails Needing Review` and tagged `#assistant/email/needs-review`.
 - Add each review email under the current local-date section `## YYYY-MM-DD`, using one subsection per email.
 - Keep date sections newest-first, inserting a new review date above older date sections.
 - Do not create a second section for a review date or email that already exists.
@@ -54,14 +54,14 @@
 - Spam messages are handled separately from summary creation.
 - Spam messages are never added to the summary note unless first moved to the inbox because they require action.
 - The remaining spam folder is cleared after important or actionable messages are moved to the inbox.
-- The email summary uses `docs/email-summary-template.md`, is titled `Email Summary`, and is tagged `#email #summary`.
+- The email summary uses `docs/email-summary-template.md`, is titled `Email Summary`, and is tagged `#assistant/email/summary`.
 - The current summary date section appears above older date sections.
 - The note has no duplicate date section for the current summary date.
 - Each email that needs review has a corresponding section in `Emails Needing Review`.
 - New review sections appear under the current local-date heading above older date sections.
 - The canonical review note has no duplicate date section or duplicate email section for the current review email.
 - Draft replies follow the email writing guide.
-- The canonical review note is titled `Emails Needing Review` and tagged `#email #needs-review`.
+- The canonical review note is titled `Emails Needing Review` and tagged `#assistant/email/needs-review`.
 - Review sections keep the `reply:` change requests, `Send reply` checkbox, and draft reply inside the `Recommended next step` subsection when a draft is needed.
 - Review-only emails without a draft close out after their non-draft action is complete.
 - All summarized emails are non-spam inbox messages with no obvious action.

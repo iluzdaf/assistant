@@ -20,7 +20,7 @@
 
 ## Actions
 
-- Find the canonical Bear note titled `Assistant Daily Review` tagged `#assistant #daily-review`.
+- Find the canonical Bear note titled `Assistant Daily Review` tagged `#assistant/daily-review`.
 - Determine the review window from the latest successful date section in that note, or use the previous local day when no prior section exists.
 - Read `jobs/README.md` and each runnable job file under `jobs/` to identify due rules for the review time.
 - Add a `Due Job Checklist` section that lists every runnable job checked, its due rule evidence, whether it is due now, and any missing evidence.
@@ -36,7 +36,7 @@
 - Identify ad hoc request patterns that could become jobs, templates, checklists, or scheduled checks.
 - Keep recommendations proposal-only; do not create new runnable jobs or templates without explicit approval.
 - Create or update the canonical Bear note using `docs/daily-review-template.md`.
-- Tag the note `#assistant #daily-review #needs-review`.
+- Tag the note `#assistant/daily-review`.
 - Add one local-date section for the review date: `## YYYY-MM-DD`.
 - Keep date sections newest-first, inserting a new review date above older date sections.
 - Do not create a second section for a review date that already exists.
@@ -55,7 +55,7 @@
 - Jobs reviewed, issues observed, workflow improvements, ad hoc workflow candidates, and scheduling candidates are all present.
 - Evidence gaps are stated instead of treated as facts.
 - Recommendations are proposal-only and do not change runnable workflow files.
-- The canonical Bear note exists, is titled `Assistant Daily Review`, and is tagged `#assistant #daily-review #needs-review`.
+- The canonical Bear note exists, is titled `Assistant Daily Review`, and is tagged `#assistant/daily-review`.
 - The current date section exists and includes at least one unchecked checkbox item in `Workflow Improvements`.
 - The current date section appears above older date sections.
 - The note has no duplicate date section for the current review date.

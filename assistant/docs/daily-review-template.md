@@ -7,7 +7,7 @@
 ```md
 # Assistant Daily Review
 
-- Tags: #assistant #daily-review #needs-review
+- Tags: #assistant/daily-review
 
 ## YYYY-MM-DD
 

@@ -54,5 +54,5 @@ Draft the reply here.
 
 - Any extra context or deadline.
 
-#email #needs-review
+#assistant/email/needs-review
 ````

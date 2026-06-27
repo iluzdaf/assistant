@@ -13,7 +13,6 @@ Product Issues Needing Review
 
 ```md
 #assistant/issue-triage
-#needs-review
 ```
 
 ## Body
