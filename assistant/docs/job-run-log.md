@@ -44,6 +44,7 @@
 - Status: completed, no-op, failed, or blocked
 - Work done: Short factual summary
 - Outputs: Bear note titles, labels, file paths, or none
+- Weekly run state: For heartbeat-dispatch entries, list each weekly job and its last successful run date, or `none found`
 - Evidence: Completion check, failure evidence, or explicit evidence gap
 - Follow-up: Next action, owner, or none
 ```

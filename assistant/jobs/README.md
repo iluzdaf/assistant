@@ -18,6 +18,7 @@
 - Read each job's `Due Rule` before selecting task-specific instructions.
 - Run every due job in the same heartbeat pass.
 - If a job is not due, record the due-rule evidence and skip reason in the run log or the due-job checklist for the job that performs the dispatch.
+- When evaluating weekly jobs, record the last successful weekly-run date for each weekly job in the heartbeat-dispatch run-log entry.
 - Do not treat a highlighted or recently edited heartbeat job as the only due job.
 
 ## Runnable Jobs
