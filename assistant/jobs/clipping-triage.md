@@ -19,7 +19,8 @@
 - Treat each untagged clipping note as a candidate for triage.
 - Read the highlighted text and metadata in each clipping note.
 - Add `#assistant/clipping` and the matching slugged `#assistant/topic/<topic-subject>` tag to every clipping note that is processed.
-- Leave the clipping note body unchanged after tagging it.
+- If a clipping note has no useful title, give it a short searchable title from the page title, article heading, source name, or strongest highlighted subject before tagging it.
+- Leave the clipping note body unchanged after tagging it, except for the note title when the original title is blank, `Untitled`, only a URL, or otherwise generic.
 - Use the topic note title to derive a lowercase hyphenated topic subject tag under `#assistant/topic/`, so the clipping stays searchable from both directions without creating root-level topic tags.
 - If a highlighted portion contains a follow-up link, match it to the appropriate topic note by keyword against the topic title and description.
 - When a topic match is strong enough, append the follow-up link to that topic note using the same checkbox + metadata format used by `topic curation`.
@@ -31,7 +32,8 @@
 
 - Only unprocessed clipping notes were selected for triage.
 - Every processed clipping note was tagged `#assistant/clipping` and with the matching `#assistant/topic/<topic-subject>` tag.
-- Processed clipping note bodies were not rewritten.
+- Every processed clipping note with a blank, `Untitled`, URL-only, or generic title was given a short searchable title.
+- Processed clipping note bodies were not rewritten, except for allowed note-title cleanup.
 - Follow-up links were matched to the appropriate topic note using keyword matching.
 - Topic-note additions used the same checkbox + metadata format as `topic curation`.
 - Notes already tagged `#assistant/clipping` were skipped on subsequent runs.
@@ -40,5 +42,6 @@
 ## Outputs
 
 - Clipping notes tagged `#assistant/clipping`.
+- Clipping notes with useful searchable titles.
 - Topic notes updated with follow-up links extracted from clipping notes.
 - One run-log entry for the clipping triage attempt.
