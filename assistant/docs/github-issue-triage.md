@@ -11,6 +11,11 @@
 ## GitHub Skill First
 
 - Prefer the GitHub skill / connected GitHub app for repository issue lookup, issue updates, issue comments when required, labels, and repository content reads.
+- For issue scans, use a repo-scoped connector issue-list path first:
+  - list open issues for the configured `owner/repo` only
+  - request issue number, title, body, labels, URL, and updated timestamp
+  - fetch comments only for issues selected by the workflow doc or human-gate label list
+  - keep the connector result tied to the configured repository before applying labels, comments, or Bear review-card updates
 - Use local `gh` only when the GitHub connector does not cover a required operation or when diagnosing local authentication.
 - When falling back to `gh`, record the reason in the run log.
 - Keep connector state and any fallback command results aligned before writing issue comments or labels.
