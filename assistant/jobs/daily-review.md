@@ -39,7 +39,7 @@
 - Add one local-date section for the review date: `## YYYY-MM-DD`.
 - Keep date sections newest-first, inserting a new review date above older date sections.
 - Do not create a second section for a review date that already exists.
-- Include at least one unchecked checkbox in that section's `Follow-ups` subsection so Bear shows the note in To Do.
+- Write actionable workflow improvements as unchecked checkbox items in the `Workflow Improvements` section so Bear shows the note in To Do.
 - After the Bear note is verified, add a run-log entry for the daily review using `docs/job-run-log.md`.
 
 ## Completion Check
@@ -50,11 +50,11 @@
 - `No jobs due` appears only when all runnable jobs were checked and none were due for the review time.
 - Missing job or schedule evidence is stated as `Unable to determine due jobs`, not as `No jobs due`.
 - Bear job run-log entries for the review window were checked, or the missing log evidence is stated.
-- Jobs reviewed, issues observed, workflow improvements, ad hoc workflow candidates, scheduling candidates, and follow-ups are all present.
+- Jobs reviewed, issues observed, workflow improvements, ad hoc workflow candidates, and scheduling candidates are all present.
 - Evidence gaps are stated instead of treated as facts.
 - Recommendations are proposal-only and do not change runnable workflow files.
 - The canonical Bear note exists, is titled `Assistant Daily Review`, and is tagged `#assistant #daily-review #needs-review`.
-- The current date section exists and includes at least one unchecked checkbox in `Follow-ups`.
+- The current date section exists and includes at least one unchecked checkbox item in `Workflow Improvements`.
 - The current date section appears above older date sections.
 - The note has no duplicate date section for the current review date.
 - A run-log entry records this daily review's status, output note, and any evidence gaps after the checks above pass.

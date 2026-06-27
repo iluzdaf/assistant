@@ -34,7 +34,7 @@
 
 ### Workflow Improvements
 
-- Recommendation: Why it helps and what approval is needed
+- [ ] Recommendation: Why it helps and what approval is needed
 
 ### Ad Hoc Workflow Candidates
 
@@ -44,7 +44,4 @@
 
 - Candidate: Suggested cadence and reason
 
-### Follow-ups
-
-- [ ] Review daily assistant recommendations
 ```
