@@ -28,8 +28,11 @@
 
 - Add one entry for each attempted runnable job.
 - Include no-op runs when the job was checked and had no work to do.
+- Add lightweight `ad-hoc` entries for manual requests that mutate notes, repo files, external systems, or workflow state.
+- Add lightweight `ad-hoc` entries for manual requests that reveal a reusable workflow pattern, even when the change is small.
 - Write completion entries only after the job completion check passes.
 - If a job fails before completion, write a failure entry after capturing the failure evidence.
+- Do not log tiny conversational answers that do not change state or reveal a reusable workflow pattern.
 - Do not record secrets, private message bodies, full email contents, or long raw command output.
 
 ## Entry Template
@@ -45,6 +48,7 @@
 - Work done: Short factual summary
 - Outputs: Bear note titles, labels, file paths, or none
 - Weekly run state: For heartbeat-dispatch entries, list each weekly job and its last successful run date, or `none found`
+- Workflow signal: Possible job, template, checklist, or workflow improvement, or none
 - Evidence: Completion check, failure evidence, or explicit evidence gap
 - Follow-up: Next action, owner, or none
 ```

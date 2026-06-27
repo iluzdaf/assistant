@@ -30,9 +30,10 @@
 - Read the Bear job run-log note entries for the review window before using automation memory or ad hoc notes.
 - Review jobs that ran during the window and summarize what each job did.
 - Treat missing run-log entries for expected jobs as evidence gaps, not proof that nothing ran.
+- Review `ad-hoc` run-log entries and their `Workflow signal` lines before using visible conversation context.
 - Identify issues, failures, unclear instructions, repeated friction, or missing completion evidence.
 - Recommend workflow improvements that would make existing jobs more reliable or easier to operate.
-- Review visible ad hoc assistant requests and identify patterns that could become jobs, templates, checklists, or scheduled checks.
+- Identify ad hoc request patterns that could become jobs, templates, checklists, or scheduled checks.
 - Keep recommendations proposal-only; do not create new runnable jobs or templates without explicit approval.
 - Create or update the canonical Bear note using `docs/daily-review-template.md`.
 - Tag the note `#assistant #daily-review #needs-review`.
@@ -50,6 +51,7 @@
 - `No jobs due` appears only when all runnable jobs were checked and none were due for the review time.
 - Missing job or schedule evidence is stated as `Unable to determine due jobs`, not as `No jobs due`.
 - Bear job run-log entries for the review window were checked, or the missing log evidence is stated.
+- Ad hoc run-log entries and `Workflow signal` lines from the review window were checked, or the missing signal evidence is stated.
 - Jobs reviewed, issues observed, workflow improvements, ad hoc workflow candidates, and scheduling candidates are all present.
 - Evidence gaps are stated instead of treated as facts.
 - Recommendations are proposal-only and do not change runnable workflow files.

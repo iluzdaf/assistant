@@ -38,7 +38,7 @@
 
 ### Ad Hoc Workflow Candidates
 
-- Request pattern: Proposed job, template, checklist, or workflow
+- Request pattern from ad-hoc run-log `Workflow signal`: Proposed job, template, checklist, or workflow
 
 ### Scheduling Candidates
 
