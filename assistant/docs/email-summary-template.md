@@ -3,6 +3,7 @@
 - Template for email summary note sections.
 - Include enough context that the email is understandable without reopening it.
 - Use this exact shape for summarized emails; do not replace it with ad hoc bullets.
+- Keep one section per date in newest-first order, with the latest date at the top.
 
 ```md
 # Email Summary

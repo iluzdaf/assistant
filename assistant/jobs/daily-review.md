@@ -37,6 +37,8 @@
 - Create or update the canonical Bear note using `docs/daily-review-template.md`.
 - Tag the note `#assistant #daily-review #needs-review`.
 - Add one local-date section for the review date: `## YYYY-MM-DD`.
+- Keep date sections newest-first, inserting a new review date above older date sections.
+- Do not create a second section for a review date that already exists.
 - Include at least one unchecked checkbox in that section's `Follow-ups` subsection so Bear shows the note in To Do.
 - After the Bear note is verified, add a run-log entry for the daily review using `docs/job-run-log.md`.
 
@@ -53,6 +55,8 @@
 - Recommendations are proposal-only and do not change runnable workflow files.
 - The canonical Bear note exists, is titled `Assistant Daily Review`, and is tagged `#assistant #daily-review #needs-review`.
 - The current date section exists and includes at least one unchecked checkbox in `Follow-ups`.
+- The current date section appears above older date sections.
+- The note has no duplicate date section for the current review date.
 - A run-log entry records this daily review's status, output note, and any evidence gaps after the checks above pass.
 - Automation memory is updated only after the Bear note and run-log entry are verified.
 

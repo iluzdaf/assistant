@@ -29,6 +29,8 @@
 - Collect non-spam inbox emails that do not have an obvious action into the canonical summary note using `docs/email-summary-template.md`.
 - Create or update one Bear note titled `Email Summary` tagged `#email #summary`.
 - Add each run's summarized emails under the current local-date section `## YYYY-MM-DD`, using one run subsection per heartbeat.
+- Keep date sections newest-first, inserting a new summary date above older date sections.
+- Do not create a second section for a summary date that already exists.
 - Archive each summarized email after it has been summarized.
 - For each email that has an obvious action, create or update the matching Bear note tagged `#email #needs-review`.
 - Keep each needs-review email in the inbox and label it with `Codex/Triaged`.
@@ -52,6 +54,8 @@
 - Spam messages are never added to the summary note unless first moved to the inbox because they require action.
 - The remaining spam folder is cleared after important or actionable messages are moved to the inbox.
 - The email summary uses `docs/email-summary-template.md`, is titled `Email Summary`, and is tagged `#email #summary`.
+- The current summary date section appears above older date sections.
+- The note has no duplicate date section for the current summary date.
 - Each email that needs review has a corresponding task.
 - Each created task points back to the Bear note for that email.
 - Draft replies follow the email writing guide.

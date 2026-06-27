@@ -2,6 +2,7 @@
 
 - Template for morning assistant review note sections.
 - Use this for daily reviews that need human review in Bear.
+- Keep one section per date in newest-first order, with the latest date at the top.
 
 ```md
 # Assistant Daily Review
