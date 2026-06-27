@@ -22,6 +22,9 @@
 - Append new entries to the end of the relevant local-date section.
 - If the local-date section does not exist, insert it above the previous latest date section before adding entries for that date.
 - Do not create a second section for a date that already exists.
+- Write GitHub issue references as `issue 123`, `owner/repo issue 123`, or the full issue URL.
+- Do not write bare `#123` or `owner/repo#123` issue references in Bear note body text; Bear treats hash tokens as tags and adds noise to the tag list.
+- Keep hash tags only for intentional Bear tags, such as the canonical footer tags.
 - Verify the saved entry before treating the run-log write as complete.
 
 ## When To Write

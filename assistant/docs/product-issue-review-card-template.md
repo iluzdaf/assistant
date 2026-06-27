@@ -23,7 +23,7 @@ Product Issues Needing Review
 
 ## Issues
 
-- [ ] owner/repo#123 - needs clarification: short reason human input is needed - https://github.com/owner/repo/issues/123
+- [ ] owner/repo issue 123 - needs clarification: short reason human input is needed - https://github.com/owner/repo/issues/123
 - [ ] owner/repo - Repository-level reason human input is needed - https://github.com/owner/repo
 ```
 
