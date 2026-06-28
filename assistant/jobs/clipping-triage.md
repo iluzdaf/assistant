@@ -8,16 +8,34 @@
 
 ## Inputs
 
-- Unprocessed web-clipper notes.
-- Notes that still show clipper metadata such as `tags: clippings`.
+- Untagged web-clipper notes.
+- Notes whose first section is raw clipper metadata, usually a YAML frontmatter block like:
+
+```md
+---
+title: "Andranik Sahakyan (@antonplex) on X"
+source: "https://x.com/antonplex/status/2012397507754770587"
+author:
+  - "[[Andranik Sahakyan]]"
+published: 2026-01-17
+created: 2026-06-27
+description: "I've been experimenting with a new system to keep my @openclaw busy:..."
+tags:
+  - "clippings"
+---
+```
+
+- Notes that still show clipper metadata such as `tags: clippings`, raw frontmatter, or source/title fragments from the clipper export.
 - Bear topic notes tagged `#assistant/topic`.
 - Shared note format and Bear CLI instructions live in `docs/`.
 
 ## Actions
 
 - Find clipping notes that have not yet been tagged `#assistant/clipping`.
+- Treat untagged notes with clipper frontmatter as clipping candidates even if the visible title is already searchable.
 - Treat each untagged clipping note as a candidate for triage.
-- Read the highlighted text and metadata in each clipping note.
+- Read the highlighted text, source, description, and raw clipper metadata in each clipping note.
+- Include notes that still only expose clipper frontmatter or source/title fragments even when `#assistant/clipping` is absent.
 - Add `#assistant/clipping` and the matching slugged `#assistant/topic/<topic-subject>` tag to every clipping note that is processed.
 - If a clipping note has no useful title, give it a short searchable title from the page title, article heading, source name, or strongest highlighted subject before tagging it.
 - Leave the clipping note body unchanged after tagging it, except for the note title when the original title is blank, `Untitled`, only a URL, or otherwise generic.
@@ -32,6 +50,8 @@
 ## Completion Check
 
 - Only unprocessed clipping notes were selected for triage.
+- Untagged notes with raw clipper frontmatter were included in triage even when the visible title looked like a normal article title.
+- Notes with clipper frontmatter, source, or title fragments were also checked for missing `#assistant/clipping` tags.
 - Every processed clipping note was tagged `#assistant/clipping` and with the matching `#assistant/topic/<topic-subject>` tag.
 - Every processed clipping note with a blank, `Untitled`, URL-only, or generic title was given a short searchable title.
 - Processed clipping note bodies were not rewritten, except for allowed note-title cleanup.
