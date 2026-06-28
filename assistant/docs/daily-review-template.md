@@ -17,6 +17,11 @@
 - Previous review section: YYYY-MM-DD or none found
 - Run-log evidence: Checked [[Assistant Job Run Log]] entries for the reviewed period, or state missing log evidence
 
+### Weekly Cadence
+
+- Weekly run state: clipping-triage last successful run YYYY-MM-DD; topic-curation last successful run YYYY-MM-DD; or `none found`
+- Weekly verification note: Short note about whether the weekly jobs were already satisfied for the review window
+
 ### Due Job Checklist
 
 - Job index evidence: Checked `assistant/jobs/README.md` and runnable job files, or state missing evidence
