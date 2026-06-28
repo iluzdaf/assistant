@@ -23,7 +23,8 @@
 - Leave the clipping note body unchanged after tagging it, except for the note title when the original title is blank, `Untitled`, only a URL, or otherwise generic.
 - Use the topic note title to derive a lowercase hyphenated topic subject tag under `#assistant/topic/`, so the clipping stays searchable from both directions without creating root-level topic tags.
 - If a highlighted portion contains a follow-up link, match it to the appropriate topic note by keyword against the topic title and description.
-- When a topic match is strong enough, append the follow-up link to that topic note using the same checkbox + metadata format used by `topic curation`.
+- When a topic match is strong enough, insert the follow-up link into the topic note's `Curated links` section using the same unchecked checkbox + metadata format used by `topic curation`.
+- If the topic note does not yet have a `Curated links` section, create it near the top of the note before inserting the link.
 - If a clipping has multiple plausible topic matches, prefer the strongest keyword match and leave the rest for manual review.
 - Skip any note that already has `#assistant/clipping` on later runs.
 - After the completion check passes, add a run-log entry using `docs/job-run-log.md`.
@@ -35,7 +36,7 @@
 - Every processed clipping note with a blank, `Untitled`, URL-only, or generic title was given a short searchable title.
 - Processed clipping note bodies were not rewritten, except for allowed note-title cleanup.
 - Follow-up links were matched to the appropriate topic note using keyword matching.
-- Topic-note additions used the same checkbox + metadata format as `topic curation`.
+- Topic-note additions were inserted into the topic note's `Curated links` section using the same unchecked checkbox + metadata format as `topic curation`.
 - Notes already tagged `#assistant/clipping` were skipped on subsequent runs.
 - A run-log entry records this job's status, outputs, and any evidence gaps after the checks above pass.
 

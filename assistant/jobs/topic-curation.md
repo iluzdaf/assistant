@@ -21,8 +21,9 @@
 - Collect only articles in v1; do not include videos or social posts.
 - Target 3-5 strong links per topic for the week.
 - If a topic has no good matches on the first pass, broaden the search until at least one acceptable article is found.
-- Append the curated items to the same topic note.
-- Write each curated item as a checkbox line with metadata:
+- Insert the curated items directly under the `## Curated links` section in the same topic note.
+- If the `Curated links` section is missing, create it near the top of the note and place the new items there.
+- Write each curated item as an unchecked checkbox line with metadata:
   - title
   - source link
   - source type
@@ -37,8 +38,8 @@
 - Only article sources were collected.
 - Each topic received 3-5 curated items when possible.
 - Topics with no immediate matches were searched more broadly until at least one acceptable article was found.
-- Curated items were appended to the existing rolling topic note rather than creating a separate output structure.
-- Each appended item uses a checkbox line with title, source link, source type, date, and a short selection reason.
+- Curated items were inserted directly under the `Curated links` section in the existing rolling topic note rather than creating a separate output structure.
+- Each inserted item uses an unchecked checkbox line with title, source link, source type, date, and a short selection reason.
 - `#assistant/topic` and its child subject tags remain reserved for topic notes and topic-linked clippings and are not used on weekly output entries.
 - A run-log entry records this job's status, outputs, and any evidence gaps after the checks above pass.
 
