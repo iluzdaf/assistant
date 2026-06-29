@@ -48,6 +48,8 @@
 - Do not create one Bear note per issue.
 - Do not duplicate a checkbox line when the issue URL is already present in the Bear review card.
 - If the issue can be handled by an agent under the product workflow, process it directly according to the product repository workflow doc.
+- For implementation-bound issues, do not edit code until the draft PR exists, the plan is posted, and the required human approval label change has happened in the product repository.
+- If PR creation or approval is blocked, stop and record the blocker instead of continuing with local implementation work.
 - For an agent-processed issue, update the source issue directly according to the product repository workflow doc.
 - Post a source issue comment only when the product repository workflow requires a visible comment or the direct update would otherwise leave unclear history.
 - After successful agent processing, update labels according to the product repository workflow doc without moving work past a human gate.
