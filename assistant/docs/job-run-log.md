@@ -26,6 +26,7 @@
 - Do not write bare `#123` or `owner/repo#123` issue references in Bear note body text; Bear treats hash tokens as tags and adds noise to the tag list.
 - Keep hash tags only for intentional Bear tags, such as the canonical footer tag.
 - Verify the saved entry before treating the run-log write as complete.
+- Include a compact `Open triaged inbox threads` line in heartbeat-dispatch and email-triage entries when the inbox still contains already-triaged mail, so it is clear that the thread is open in inbox but not new work.
 
 ## When To Write
 
@@ -51,6 +52,7 @@
 - Work done: Short factual summary
 - Outputs: Bear note titles, labels, file paths, or none
 - Weekly run state: For heartbeat-dispatch entries, list each weekly job and its last successful run date, or `none found`
+- Open triaged inbox threads: For heartbeat-dispatch and email-triage entries, list already-triaged inbox threads that are still sitting in inbox, or `none found`
 - Workflow signal: Possible job, template, checklist, or workflow improvement, or none
 - Evidence: Completion check, failure evidence, or explicit evidence gap
 - Follow-up: Next action, owner, or none
