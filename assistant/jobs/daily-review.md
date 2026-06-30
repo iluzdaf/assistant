@@ -23,6 +23,7 @@
 - Find the canonical Bear note titled `Assistant Daily Review` tagged `#assistant/daily-review`.
 - Determine the review window from the latest successful date section in that note, or use the previous local day when no prior section exists.
 - Read `jobs/README.md` and each runnable job file under `jobs/` to identify due rules for the review time.
+- Add a `Weekly Cadence` section that summarizes the last successful weekly run dates for `clipping-triage` and `topic-curation`, or states `none found` when that evidence is missing.
 - Add a `Due Job Checklist` section that lists every runnable job checked, its due rule evidence, whether it is due now, and any missing evidence.
 - Mark a due-job checklist item checked only when that job's due rule was found and evaluated; leave it unchecked when evidence is missing or the due state is unknown.
 - Use `No jobs due` only when every runnable job and due rule was found and evaluated as not due for the review time.
@@ -46,6 +47,7 @@
 ## Completion Check
 
 - The review window is stated in the current date section.
+- The current date section includes a `Weekly Cadence` subsection with the last successful weekly run dates for `clipping-triage` and `topic-curation`, or `none found`.
 - The due-job checklist lists every runnable job checked, its due rule evidence, due-now result, and any evidence gap.
 - Checked due-job checklist items have evaluated due-rule evidence; unchecked due-job checklist items have an explicit evidence gap.
 - `No jobs due` appears only when all runnable jobs were checked and none were due for the review time.
