@@ -27,6 +27,7 @@
 - `daily-review.md`: run once each morning.
 - `email-triage.md`: run on every heartbeat pass.
 - `product-issue-triage.md`: run on every heartbeat pass.
+- `product-pr-triage.md`: run on every heartbeat pass.
 - `topic-curation.md`: run weekly.
 
 ## Writing Rules

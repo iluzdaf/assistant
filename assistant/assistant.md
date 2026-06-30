@@ -19,12 +19,13 @@
 - `jobs/daily-review.md`: morning review job for assistant activity and workflow recommendations.
 - `jobs/email-triage.md`: heartbeat job for Gmail and email review-note triage.
 - `jobs/product-issue-triage.md`: heartbeat job for configured GitHub product issue triage.
+- `jobs/product-pr-triage.md`: heartbeat job for configured GitHub product PR planning.
 - `jobs/topic-curation.md`: weekly job for topic article curation.
 - `docs/README.md`: shared reference docs for Bear details.
 - `docs/bear-cli.md`: Bear note commands and conventions.
 - `docs/daily-review-template.md`: template for daily assistant review note sections.
 - `docs/job-run-log.md`: Bear run-log convention for job activity evidence.
-- `docs/github-issue-triage.md`: GitHub issue read/write conventions for product issue triage.
+- `docs/github-product-workflow.md`: shared GitHub issue and PR conventions for product workflow jobs.
 - `docs/product-issue-review-card-template.md`: Bear card template for product issues needing human intervention.
 - `docs/email-writing-guide.md`: reply style guide for email drafts.
 - `docs/email-review-template.md`: template for email review note sections.

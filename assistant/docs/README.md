@@ -37,7 +37,7 @@
 - `bear-cli.md`: Bear note commands, constraints, and note-title conventions.
 - `daily-review-template.md`: template for daily assistant review note sections that need review in Bear.
 - `job-run-log.md`: Bear run-log convention for assistant job activity evidence.
-- `github-issue-triage.md`: GitHub issue read/write conventions for product issue triage.
+- `github-product-workflow.md`: GitHub issue and PR conventions for product workflow jobs.
 - `product-issue-review-card-template.md`: Bear card template for product issues needing human intervention.
 - `email-writing-guide.md`: reply style guide for email drafts.
 - `email-review-template.md`: template for email review note sections.
