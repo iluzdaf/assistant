@@ -40,7 +40,7 @@
   - PR title, body, labels, state, draft status, URL, and comments
   - linked source issue body, all issue comments, current labels, and URL
   - product workflow doc content
-- If the linked issue cannot be found, add `blocked` to the PR with the missing-link evidence and stop that PR.
+- If the linked issue cannot be found, write the missing-link evidence in the PR or run log, leave labels unchanged, and stop that PR.
 - Base the PR plan on the linked issue's triage record, problem, desired outcome, acceptance criteria, constraints, relevant files, verification expectations, and smoke-test draft.
 - Write the plan in the PR body or a PR comment according to the product workflow doc.
 - After writing the plan, add `needs-plan-approval` to the PR.
@@ -58,7 +58,7 @@
 - Refuse to edit code unless the product workflow doc and PR history show the PR passed through `needs-plan` and `needs-plan-approval`.
 - Implement only the approved PR plan, including focused tests and E2E tests as early as practical in each plan step.
 - Before each next plan step, check new PR comments and address in-scope requested changes.
-- If comments or implementation findings introduce new scope, unresolved product decisions, credentials, external dependencies, or ambiguity, add `blocked` with the exact reason and stop.
+- If comments or implementation findings introduce new scope, unresolved product decisions, credentials, external dependencies, or ambiguity, write the exact stop reason in the PR, leave labels unchanged, and stop.
 - After the final plan step, verify smoke tests, make in-scope changes required to pass them, mark agent-verified smoke tests, and leave human-only smoke checks unchecked with notes.
 - Replace `in-progress` with `needs-review` only after implementation and agent-verifiable smoke tests are complete.
 - Do not review, merge, or move the PR past `needs-review`.

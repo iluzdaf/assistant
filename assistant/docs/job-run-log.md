@@ -48,7 +48,7 @@
 
 - Run window: YYYY-MM-DD HH:MM to YYYY-MM-DD HH:MM local time
 - Trigger: heartbeat, daily review, manual request, or other
-- Status: completed, no-op, failed, or blocked
+- Status: completed, no-op, failed, or stopped
 - Work done: Short factual summary
 - Outputs: Bear note titles, labels, file paths, or none
 - Weekly run state: For heartbeat-dispatch entries, list each weekly job and its last successful run date, or `none found`

@@ -37,7 +37,7 @@
 - Implement the approved PR plan sequentially while the PR remains labeled `in-progress`.
 - Include each plan step's focused tests and E2E tests as early as practical in that step.
 - Before each next plan step, check new PR comments and address in-scope requested changes.
-- If comments or implementation findings introduce new scope, unresolved product decisions, credentials, external dependencies, or ambiguity, add `blocked` with the exact reason and stop.
+- If comments or implementation findings introduce new scope, unresolved product decisions, credentials, external dependencies, or ambiguity, write the exact stop reason in the PR, leave labels unchanged, and stop.
 - Keep product code changes scoped to the approved plan and linked issue.
 - Run the product workflow's required type checks, focused tests, E2E tests, and smoke tests.
 - After the final plan step, verify all smoke tests that the agent can verify, make in-scope changes required for smoke tests to pass, mark agent-verified smoke tests, and leave human-only smoke checks unchecked with notes.
@@ -55,18 +55,18 @@
 - Each implemented PR had a linked source issue and an approved PR plan.
 - Each implemented PR was verified to have passed through `needs-plan` and `needs-plan-approval` before code edits.
 - New PR comments were checked before each next plan step.
-- Any new scope, unresolved decision, credential, external dependency, or ambiguity caused `blocked` to be added and implementation to stop.
+- Any new scope, unresolved decision, credential, external dependency, or ambiguity caused an explanatory PR comment to be written and implementation to stop.
 - Focused tests and E2E tests were added or updated as early as practical in the plan steps they validate.
 - Required checks and agent-verifiable smoke tests were run or explicitly reported as unreliable/hanging.
 - Agent-verified smoke tests were marked, and human-only smoke checks were left unchecked with notes.
 - Completed implementation PRs had `in-progress` replaced with `needs-review` and were not moved beyond it.
 - No review, merge, or post-`needs-review` work was performed by this job.
-- A run-log entry records this job's status, implemented PRs, skipped PRs, blocked PRs, outputs, and any evidence gaps after the checks above pass.
+- A run-log entry records this job's status, implemented PRs, skipped PRs, stopped PRs, outputs, and any evidence gaps after the checks above pass.
 
 ## Outputs
 
 - Updated product PR branches with implementation commits.
 - Updated PR body/comments with implementation and smoke-test evidence.
 - PRs moved from `in-progress` to `needs-review` after completed implementation.
-- Blocked PRs with exact blocker evidence when implementation cannot proceed.
+- Stopped PRs with exact evidence when implementation cannot proceed.
 - One run-log entry for the product implementation attempt.
