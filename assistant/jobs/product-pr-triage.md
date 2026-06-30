@@ -39,6 +39,7 @@
 - If unresolved open questions, planning decisions, or scope changes remain, write the exact stop reason in the PR, leave labels unchanged, and stop that PR.
 - After the plan is written, add `needs-plan-approval` to the PR.
 - Do not remove `needs-plan-approval`.
+- Do not add `plan-approved`.
 - Do not add `in-progress`.
 - Do not edit product code.
 - Do not perform implementation, review, smoke testing, or merge work.
@@ -59,6 +60,7 @@
 - PRs with missing links, unresolved questions, ambiguous planning decisions, or scope changes were stopped with evidence and not moved to `needs-plan-approval`.
 - Planned PRs were updated with a plan before `needs-plan-approval` was added.
 - No `needs-plan-approval` label was removed by this job.
+- No `plan-approved` label was added by this job.
 - No `in-progress` label was added by this job.
 - No product code was edited by this job.
 - No implementation, review, smoke testing, or merge work was performed by this job.
