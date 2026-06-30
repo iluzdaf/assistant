@@ -1,7 +1,8 @@
 # Email Review Template
 
 - Template for email review note sections.
-- Keep one section per email that needs review.
+- Keep one section per email that needs review, except repeated CI or build notifications for one pull request.
+- For CI or build notifications tied to a pull request, keep one grouped section per repository and PR, then append repeated alert emails to that section.
 - Keep date sections in newest-first order, with the latest date at the top.
 - Keep only open review items in this note; remove each section independently after that section's checkbox actions are complete and the corresponding email is archived.
 
@@ -57,3 +58,40 @@ Draft the reply here.
 
 #assistant/email/needs-review
 ````
+
+For grouped CI/build failure notifications, use the same structure with a PR-scoped heading and repeated message references:
+
+````md
+## YYYY-MM-DD
+
+### repo-name PR #123 CI failures
+
+- From: CI sender name
+- Date: first alert YYYY-MM-DD; latest alert YYYY-MM-DD
+- Email:
+  - Gmail message id or subject for first alert
+  - Gmail message id or subject for repeated alert
+- PR: repository PR URL
+
+#### Summary
+
+- The PR has repeated CI or build notifications for the same failure stream.
+
+#### Why it needs review
+
+- The current PR CI state needs review without creating one note section per alert email.
+
+#### Recommended next step
+
+- [ ] Review the PR's current CI state and decide whether action is needed.
+
+#### Notes
+
+- Latest failing or recovered run details, with dates and run URLs when available.
+
+#assistant/email/needs-review
+````
+
+- Use the grouped CI/build shape only when the notifications share the same repository and PR number, PR URL, branch, or stable build-thread identifier.
+- Add later failure or recovery notifications for the same PR to the existing grouped section instead of creating a new section.
+- Archive every corresponding Gmail message when the grouped section's checkbox actions are complete and the section is removed.

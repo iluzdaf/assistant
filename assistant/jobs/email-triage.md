@@ -36,6 +36,10 @@
 - For each email that has an obvious action, create or update the matching section in `Emails Needing Review` using `docs/email-review-template.md`.
 - Create the canonical review note if missing, titled `Emails Needing Review` and tagged `#assistant/email/needs-review`.
 - Add each review email under the current local-date section `## YYYY-MM-DD`, using one subsection per email.
+- For CI or build failure notifications tied to a pull request, use one subsection per repository and PR instead of one subsection per notification email.
+- Match repeated CI or build alerts by repository plus PR number, PR URL, branch, or stable build-thread identifier from the email body or subject.
+- When a matching PR-scoped CI section already exists, update that section instead of adding a new subsection: append the new Gmail message reference under `Email`, add the latest failure/run details to `Notes`, and keep one open checkbox for reviewing the PR's current CI state.
+- If a later CI notification for the same PR reports recovery, update the same section with the recovery evidence; remove the section only after its checkbox actions are complete and all corresponding Gmail messages are archived.
 - Keep date sections newest-first, inserting a new review date above older date sections.
 - Do not create a second section for a review date or email that already exists.
 - Keep each needs-review email in the inbox and label it with `Codex/Triaged`.
@@ -60,8 +64,11 @@
 - The current summary date section appears above older date sections.
 - The note has no duplicate date section for the current summary date.
 - Each email that needs review has a corresponding section in `Emails Needing Review`.
+- Repeated CI or build failure notifications for the same repository and PR are grouped in one PR-scoped section, not spread across separate email sections.
+- A grouped CI section lists every corresponding Gmail message reference and the latest known failure or recovery evidence.
 - New review sections appear under the current local-date heading above older date sections.
 - The canonical review note has no duplicate date section or duplicate email section for the current review email.
+- The canonical review note has no duplicate CI/build section for the same repository and PR.
 - Draft replies follow the email writing guide.
 - The canonical review note is titled `Emails Needing Review` and tagged `#assistant/email/needs-review`.
 - Review sections keep the `reply:` change requests, `Send reply` checkbox, and draft reply inside the `Recommended next step` subsection when a draft is needed.
