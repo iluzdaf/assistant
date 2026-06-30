@@ -18,6 +18,7 @@
 - `jobs/clipping-triage.md`: weekly job for web-clipper note triage.
 - `jobs/daily-review.md`: morning review job for assistant activity and workflow recommendations.
 - `jobs/email-triage.md`: heartbeat job for Gmail and email review-note triage.
+- `jobs/product-implementation.md`: heartbeat job for configured GitHub product PR implementation.
 - `jobs/product-issue-triage.md`: heartbeat job for configured GitHub product issue triage.
 - `jobs/product-pr-triage.md`: heartbeat job for configured GitHub product PR planning.
 - `jobs/topic-curation.md`: weekly job for topic article curation.
