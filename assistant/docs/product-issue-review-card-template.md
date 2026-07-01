@@ -22,15 +22,23 @@ Product Issues Needing Review
 
 ## Issues
 
-- [ ] owner/repo issue 123 - needs clarification: short reason human input is needed - https://github.com/owner/repo/issues/123
-- [ ] owner/repo - Repository-level reason human input is needed - https://github.com/owner/repo
+- [ ] [owner/repo issue 123](https://github.com/owner/repo/issues/123)
+  - Status: needs clarification
+  - Summary: short reason human input is needed.
+
+- [ ] [owner/repo](https://github.com/owner/repo)
+  - Status: repository-level review needed
+  - Summary: short reason human input is needed.
 ```
 
 ## Update Rules
 
-- Add one unchecked checkbox line per issue that needs human intervention.
-- Add one unchecked checkbox line per repository when repository-level intervention is needed, such as a missing or unreadable workflow doc.
-- Include the repository, issue number when available, short reason, and source URL.
+- Add one unchecked checkbox item per issue that needs human intervention.
+- Format the checkbox label as a Markdown link to the source issue, using `owner/repo issue 123` as the link text.
+- Under each issue checkbox, add indented bullets for `Status` and `Summary`.
+- Add one unchecked checkbox item per repository when repository-level intervention is needed, such as a missing or unreadable workflow doc.
+- Format repository-level checkbox labels as Markdown links to the repository.
+- Include the repository, issue number when available, product-workflow status, source URL, and a short summary of what needs human review.
 - Use `needs clarification` wording for clarification-only issues and `needs approval` wording only for issues that specifically require approval.
-- If the issue or repository URL is already present, update the reason instead of adding a duplicate line.
+- If the issue or repository URL is already present, update the existing item instead of adding a duplicate block.
 - Leave completed checkbox lines checked; do not re-add them unless the source issue has new relevant activity.
