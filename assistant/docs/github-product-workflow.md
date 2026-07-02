@@ -23,9 +23,28 @@
 - When falling back to `gh`, record the reason in the run log.
 - Keep connector state and any fallback command results aligned before writing comments, bodies, or labels.
 
+## Connector Label Search Paths
+
+- For workflow-label issue scans, use the GitHub connector issue search path before `gh`:
+  - tool: `mcp__codex_apps__github._search_issues`
+  - scope: `repository_full_name: owner/repo`
+  - state: `open`
+  - query shape: `repo:owner/repo is:issue state:open label:workflow-defined-label`
+  - request one workflow-defined label at a time when the job selects by label
+- For workflow-label PR scans, use the GitHub connector PR search path before `gh`:
+  - tool: `mcp__codex_apps__github._search_prs`
+  - scope: `repository_full_name: owner/repo`
+  - state: `open`
+  - query shape: `repo:owner/repo is:pr state:open label:workflow-defined-label`
+  - request one workflow-defined label at a time when the job selects by label
+- Current connector search results can filter by label, but may not return a complete label list in each item snapshot.
+- If the job must enumerate all open issues or PRs and inspect each item's full current label set, use `gh` fallback and record that connector search is not a label-bearing list result.
+- After connector label search selects an issue or PR, fetch comments and any required detail through the connector when a detail path exists; use `gh` only for missing detail fields and record the reason.
+
 ## Issue Triage Reads And Writes
 
-- For issue scans, use a repo-scoped connector issue-list path first:
+- For issue scans that select by workflow label, use the connector label search path first.
+- For issue scans that must review every open issue, use a repo-scoped connector issue-list path only when it returns the full current label set; otherwise use `gh` fallback and record that connector search is not a label-bearing list result:
   - list open issues for the configured `owner/repo` only
   - request issue number, title, body, labels, URL, and updated timestamp
   - fetch comments only for issues selected by the workflow doc
@@ -36,7 +55,7 @@
 
 ## PR Planning Reads And Writes
 
-- For PR scans, list open draft PRs in the configured `owner/repo` and select PRs labeled `needs-plan`.
+- For PR scans, search open draft PRs in the configured `owner/repo` through the connector label search path for `needs-plan` before using `gh` fallback.
 - For each selected PR, read:
   - PR title, body, labels, state, draft status, URL, and comments
   - linked source issue body, all issue comments, current labels, and URL
@@ -53,7 +72,7 @@
 ## PR Implementation Reads And Writes
 
 - Product repository workflow lifecycle is `needs-plan` -> `needs-plan-approval` -> human applies `plan-approved` -> dispatcher claims with `in-progress` -> delegated implementation agent completes with `needs-review`.
-- For implementation scans, list open PRs in the configured `owner/repo` and select PRs labeled `plan-approved`.
+- For implementation scans, search open PRs in the configured `owner/repo` through the connector label search path for `plan-approved` before using `gh` fallback.
 - For each selected PR, read:
   - PR title, body, labels, state, draft status, URL, comments, head branch, and changed files
   - linked source issue body, all issue comments, current labels, and URL
