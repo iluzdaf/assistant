@@ -26,8 +26,6 @@
   - Agents may add this label when the issue is ready for approval.
   - Agents must not remove this label or replace it with `ready-for-agent`.
   - A project collaborator or owner must explicitly change labels to move the issue past this gate.
-- `needs-clarification`
-  - Triage found open questions that must be answered before implementation.
 - `ready-for-agent`
   - A project collaborator or owner has explicitly approved agent work by changing labels.
   - The issue has enough detail for product automation to create the draft planning PR.
@@ -83,7 +81,7 @@
 - Comments may provide feedback, clarification, decisions, and review context.
 - Labels control issue and PR workflow authorization before implementation.
 - Human merge controls final release authorization.
-- Issue triage may continue from comments while the issue is in `needs-triage`, `needs-clarification`, or `needs-approval`.
+- Issue triage may continue from comments while the issue is in `needs-triage` or `needs-approval`.
 - Comments must not move work past `needs-approval` or `needs-plan-approval`.
 - Agents must not infer gate completion from comments, chat, plans, or elapsed time.
 - Agents must verify the current PR has already passed through `needs-plan` and `needs-plan-approval` before editing code.
@@ -158,11 +156,13 @@
 - Read the issue body and all relevant comments before deciding whether open questions are answered.
 - Preserve the original feedback body and comments.
 - Append triage in a new comment instead of overwriting existing feedback.
-- Ask at least three concise clarification questions during triage before moving an unclear issue forward.
+- Ask concise clarification questions during triage before moving an unclear issue forward.
 - Include type, problem, desired outcome, acceptance criteria, constraints, relevant files, verification expectations, and smoke-test draft.
 - Use implementation plan drafts only when the path is obvious.
 - State relevant files as guidance, not certainty.
-- Add `needs-clarification` when requirements are unclear.
+- Leave `needs-triage` in place when requirements are unclear.
+- If feedback is unclear, comment with exact clarification questions and do not move the issue to `needs-approval`.
+- When clarification arrives, the next triage pass re-reads the issue body and comments, then either asks again or moves the issue to `needs-approval`.
 - Do not mark a task `ready-for-agent`; a project collaborator or owner label change is required.
 - Move the feedback issue to `needs-approval` after triage is complete but before a project collaborator or owner explicitly changes labels.
 - Keep the feedback issue as the task record by default.
@@ -238,7 +238,9 @@
 
 - Product repository automation owns the transition from issue `ready-for-agent` to draft PR `needs-plan`.
 - Assistant jobs should not choose product branch names unless explicitly instructed by the product workflow or user.
-- Product automation should link issue and PR both ways, remove issue `ready-for-agent` only after the draft PR exists, and stop before planning or implementation.
+- Product automation should create or find a linked draft PR, add `needs-plan`, link issue and PR both ways, remove issue `ready-for-agent`, comment that work continues on the PR, lock the issue conversation, and stop before planning or implementation.
+- If issue locking fails after the linked PR exists and has `needs-plan`, keep the linked PR and `needs-plan`, record the lock failure, and stop further automation for that issue.
+- A human may manually unlock a claimed issue if the PR is abandoned or the issue needs to reopen as intake.
 
 ## Fallback `gh` Shapes
 
