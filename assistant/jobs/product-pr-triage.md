@@ -1,6 +1,6 @@
 # Product PR Triage
 
-- Purpose: scan configured product repositories for draft PRs labeled `needs-plan`, write plans from linked issue triage context, move planned PRs to `needs-plan-approval`, and stop.
+- Purpose: scan configured product repositories for draft PRs labeled `needs-plan`, verify each selected PR conversation is locked, write plans from linked issue triage context, move planned PRs to `needs-plan-approval`, and stop.
 
 ## Due Rule
 
@@ -27,10 +27,11 @@
 
 - Read this job's `Configuration` section.
 - Stop with a no-op run-log entry when no product repositories are configured.
-- Use the GitHub skill / connected GitHub app first for PR reads, issue reads, comments, body updates, and label updates; use local `gh` only when the connector does not cover a required operation.
+- Use the GitHub skill / connected GitHub app first for PR reads, issue reads, comments, body updates, lock-state reads, and label updates; use local `gh` only when the connector does not cover a required operation.
 - For each configured repository, read `docs/github-product-workflow.md` and read `PRODUCT_REPO/docs/agent-workflow.md` as the repo-specific supplement before scanning PRs.
 - If the product supplement is missing or unreadable, continue with the assistant workflow and record the missing-supplement evidence in the run log.
 - Scan open draft PRs in each configured repository and select only PRs labeled `needs-plan`.
+- Verify each selected PR conversation is locked before planning; if it is unlocked, write the lock failure evidence in the PR or run log, leave labels unchanged, and stop that PR.
 - For each selected PR, find the linked source issue from GitHub linked issue metadata, closing keywords, or explicit issue links in the PR body.
 - If no linked issue is found, write the missing-link evidence in the PR or run log, leave labels unchanged, and stop that PR.
 - Gather the linked issue title, issue body, all issue comments, current labels, source URL, latest triage record, assistant workflow, and product supplement content when present.
@@ -60,6 +61,7 @@
 - Each planned PR context includes PR title, body, comments, current labels, draft status, source URL, linked issue context, assistant workflow, and product supplement content when present.
 - Each plan was based on the linked issue triage record, assistant workflow, and product supplement context when present.
 - PRs with missing links, unresolved questions, ambiguous planning decisions, or scope changes were stopped with evidence and not moved to `needs-plan-approval`.
+- Each selected PR conversation was verified locked before planning, or the unlocked-state evidence was recorded and the PR was stopped without label changes.
 - Planned PRs were updated with a plan before `needs-plan-approval` was added.
 - No `needs-plan-approval` label was removed by this job.
 - No `plan-approved` label was added by this job.
@@ -70,6 +72,6 @@
 
 ## Outputs
 
-- Updated draft PRs with plans and `needs-plan-approval`.
+- Locked draft PRs updated with plans and `needs-plan-approval`.
 - Stopped PRs with exact evidence when planning cannot proceed.
 - One run-log entry for the product PR triage attempt.
