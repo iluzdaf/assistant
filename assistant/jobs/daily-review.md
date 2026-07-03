@@ -29,6 +29,7 @@
 - Use `No jobs due` only when every runnable job and due rule was found and evaluated as not due for the review time.
 - Use `Unable to determine due jobs` when job files, due rules, timestamps, runner status, or other required evidence is missing.
 - Read the Bear job run-log note entries for the review window before using automation memory or ad hoc notes.
+- Use the bounded current-date or target-date read path in `docs/job-run-log.md`; do not export the full `Assistant Job Run Log` during routine daily reviews.
 - Review jobs that ran during the window and summarize what each job did.
 - Treat missing run-log entries for expected jobs as evidence gaps, not proof that nothing ran.
 - Review `ad-hoc` run-log entries and their `Workflow signal` lines before using visible conversation context.
@@ -52,7 +53,7 @@
 - Checked due-job checklist items have evaluated due-rule evidence; unchecked due-job checklist items have an explicit evidence gap.
 - `No jobs due` appears only when all runnable jobs were checked and none were due for the review time.
 - Missing job or schedule evidence is stated as `Unable to determine due jobs`, not as `No jobs due`.
-- Bear job run-log entries for the review window were checked, or the missing log evidence is stated.
+- Bear job run-log entries for the review window were checked through a bounded date-section read or targeted `search-in` checks, or the missing log evidence is stated.
 - Ad hoc run-log entries and `Workflow signal` lines from the review window were checked, or the missing signal evidence is stated.
 - Jobs reviewed, issues observed, workflow improvements, ad hoc workflow candidates, and scheduling candidates are all present.
 - Evidence gaps are stated instead of treated as facts.

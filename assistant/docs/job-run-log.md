@@ -28,6 +28,23 @@
 - Verify the saved entry before treating the run-log write as complete.
 - Include a compact `Open triaged inbox threads` line in heartbeat-dispatch and email-triage entries when the inbox still contains already-triaged mail, so it is clear that the thread is open in inbox but not new work.
 
+## How To Read A Bounded Date Section
+
+- Do not export the full `Assistant Job Run Log` for routine daily-review checks.
+- Search within the canonical note for the target local-date heading first, for example `## YYYY-MM-DD`.
+- Use the returned byte offset as the start point for a bounded `bearcli cat` read with `--offset` and `--limit`.
+- Read only enough chunks to cover the target date section and stop when the next `## YYYY-MM-DD` heading appears.
+- If a bounded read still truncates before the section end, record the truncation as an evidence gap and use targeted `search-in` checks for required job names, `Workflow signal`, and weekly-run state.
+- Prefer targeted `search-in` checks over full-note reads when confirming whether a specific run-log entry, job name, weekly state, or workflow signal exists.
+
+Common command shape:
+
+```sh
+/Applications/Bear.app/Contents/MacOS/bearcli search-in NOTE_ID --string '## YYYY-MM-DD' --context 0 --format json
+/Applications/Bear.app/Contents/MacOS/bearcli cat NOTE_ID --offset OFFSET --limit 20000 --format json
+/Applications/Bear.app/Contents/MacOS/bearcli search-in NOTE_ID --string 'Workflow signal' --context 300 --format json
+```
+
 ## When To Write
 
 - Add one entry for each attempted runnable job.
