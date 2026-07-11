@@ -40,6 +40,10 @@
 ## Run Log
 
 - Runnable jobs record actual activity using `../docs/job-run-log.md`.
-- Add one run-log entry whenever a job is attempted, including no-op attempts.
+- Add compact run-log entries by default.
+- Manual job runs get one compact entry per attempted job.
+- Heartbeat runs get one compact `heartbeat-dispatch` entry for due-rule decisions, including skipped jobs and evidence.
+- Heartbeat jobs get separate compact entries only when they change external state, produce user-facing output, fail, stop, or need human follow-up.
+- Do not expand every routine heartbeat no-op into a full multi-bullet block.
 - Completion entries are written only after the job's completion check passes.
 - Failure entries include the captured failure evidence or the explicit evidence gap.

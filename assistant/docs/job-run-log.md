@@ -9,7 +9,10 @@
 - Title: `Assistant Job Run Log`.
 - Tags: `#assistant/job-run-log`.
 - Create the canonical Bear note when missing.
-- Treat the note as append-only.
+- Keep the canonical note small enough to sync quickly.
+- Rotate the canonical note when it becomes unwieldy, normally when it is older than 14 days, larger than 250 KB, or visibly slow to sync.
+- Preserve rotated content in a separate archive note titled `Assistant Job Run Log Archive - YYYY-MM-DD to YYYY-MM-DD`.
+- Archive notes use `#assistant/job-run-log-archive`, not a child of `#assistant/job-run-log`, so searches for the canonical tag return one active note.
 - Group entries under one local-date heading per day: `## YYYY-MM-DD`.
 - Keep local-date sections in newest-first order, with the latest date at the top.
 - Link to output Bear notes by title when a job creates or updates them.
@@ -27,6 +30,12 @@
 - Keep hash tags only for intentional Bear tags, such as the canonical footer tag.
 - Verify the saved entry before treating the run-log write as complete.
 - Include a compact `Open triaged inbox threads` line in heartbeat-dispatch and email-triage entries when the inbox still contains already-triaged mail, so it is clear that the thread is open in inbox but not new work.
+- Keep routine entries to one line under the date heading.
+- Use the expanded template only for failures, stopped jobs, migrations, one-off repairs, or evidence gaps that need durable detail.
+- Put detailed evidence in the job output note, source issue, PR, automation memory, or final response when available; the run log should name the evidence, not copy it.
+- For heartbeat passes, write one `heartbeat-dispatch` line that lists due jobs, skipped jobs, and key outputs.
+- Write separate job lines only for jobs that changed external state, found new work, failed, stopped, or need human follow-up.
+- Do not write separate no-op lines for every skipped heartbeat job when the dispatch line already records the due-rule evidence.
 
 ## How To Read A Bounded Date Section
 
@@ -47,16 +56,36 @@ Common command shape:
 
 ## When To Write
 
-- Add one entry for each attempted runnable job.
-- Include no-op runs when the job was checked and had no work to do.
+- Add one compact entry for each attempted manual job.
+- For heartbeat dispatch, add one compact dispatch entry for the pass, plus compact per-job entries only when the job changed state, produced a user-facing output, failed, stopped, or needs human follow-up.
+- Include no-op runs only when they are the main attempted job or when the no-op evidence is not already captured by the heartbeat-dispatch line.
 - Add lightweight `ad-hoc` entries for manual requests that mutate notes, repo files, external systems, or workflow state.
-- Add lightweight `ad-hoc` entries for manual requests that reveal a reusable workflow pattern, even when the change is small.
+- Add lightweight `ad-hoc` entries for manual requests that reveal a reusable workflow pattern, but keep them to one line unless a failure needs detail.
 - Write completion entries only after the job completion check passes.
 - If a job fails before completion, write a failure entry after capturing the failure evidence.
 - Do not log tiny conversational answers that do not change state or reveal a reusable workflow pattern.
 - Do not record secrets, private message bodies, full email contents, or long raw command output.
 
-## Entry Template
+## Compact Entry Template
+
+Use this for routine successful and no-op work:
+
+```md
+## YYYY-MM-DD
+
+- HH:MM `job-name` status: outcome; outputs: note/title/label/file or none; evidence: compact source; follow-up: owner/action or none.
+```
+
+Examples:
+
+```md
+- 08:37 `clipping-triage` completed: tagged 5 clipping notes and fixed 1 generic title; outputs: AI in Education, AI Automation, AI Vampire, Chess clipping tags; evidence: Bear tag readbacks; follow-up: none.
+- 09:00 `heartbeat-dispatch` completed: due email/product jobs ran; skipped daily-review current date exists, weekly jobs last ran 2026-07-11; outputs: Emails Needing Review unchanged; evidence: Gmail labels, GitHub queue scans; follow-up: review Gmail 19f4bc799a4d4706.
+```
+
+## Expanded Entry Template
+
+Use this only for failures, stopped jobs, migrations, one-off repairs, or evidence gaps that need durable detail:
 
 ```md
 ## YYYY-MM-DD
